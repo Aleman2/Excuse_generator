@@ -11,19 +11,37 @@
       crossorigin="anonymous"
     />
     <link rel="shortcut icon" href="./4geeks.ico" />
+    <script>
+      function random() {
+        let who = ["the dog ", "my granma ", "his turtle ", "my bird "];
+        let what = ["eat ", "pissed ", "crushed ", "broked "];
+        let when = [
+          "before the class",
+          "right in time",
+          "when I finished",
+          "during my lunch",
+          "while I was praying"
+        ];
+        var todo = [who, what, when];
+        var frase = "";
+        for (var i = 0; i < todo.length; i++) {
+          var numero = Math.floor(Math.random() * todo[i].length);
+          frase += todo[i][numero];
+        }
+        document.getElementById("text").innerText = frase;
+      }
+    </script>
   </head>
   <body>
     <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
-      </div>
+      <button
+        onclick="random()"
+        style="border:1px solid black;border-radius:5px;"
+      >
+        Empecemos las excusas
+      </button>
+      <br />
+      <p id="text"></p>
     </div>
   </body>
 </html>
